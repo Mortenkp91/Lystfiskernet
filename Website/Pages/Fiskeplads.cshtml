@@ -1,0 +1,15 @@
+﻿@page "{fiskepladsId}"
+@model Website.Pages.FiskepladsModel
+@{
+    ViewData["Title"] = $"Fiskeplads {Model.Navn}";
+}
+
+
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+      <h5 class="card-title">Fiskeplads @Html.DisplayFor(x => x.Navn)</h5>
+      <p>Beskrivelse:</p>
+    <p class="card-text">@Html.DisplayFor(x => x.Beskrivelse)</p>
+  </div>
+</div>

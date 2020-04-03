@@ -1,0 +1,37 @@
+﻿@page
+@model Website.Pages.FiskepladserModel
+@{
+    ViewData["Title"] = "Fiskepladser";
+}
+
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Navn</th>
+                <th scope="col">Beskrivelse</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+            @{
+                @foreach (var fiskePlads in Model.Fiskepladser)
+                {
+            <tr>
+                <td>@Html.DisplayFor(x => fiskePlads.Id)</td>
+                <td>@Html.DisplayFor(x => fiskePlads.Name)</td>
+                <td>@Html.DisplayFor(x => fiskePlads.Description)</td>
+                <td>
+                    <a asp-page="./Fiskeplads" asp-route-fiskepladsId="@fiskePlads.Id">Vis</a> |
+                </td>
+            </tr>
+                }
+            }
+        </tbody>
+
+
+    </table>
+
